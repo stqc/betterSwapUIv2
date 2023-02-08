@@ -103,7 +103,7 @@ function CreateToken(){
                         <li>Type in your desired token symbol</li>
                         <li>Type in the supply for your token</li>
                         <li>Fill out any taxes that you may have on your token</li>
-                        <li>Approve USD for a small fee of $20 and then create your token!</li>
+                        <li>Approve USD for a small fee of $50 and then create your token!</li>
                         <li>Once the token is created head on over to Manage Token tab. This is where you will set your Taxes and create your pool to trade on BetterSwap!</li>
                     </ul>
                 </div>    
