@@ -47,7 +47,7 @@ export let ref= urlParams.get('ref');
 
 export const getFactoryContract = async ()=>{
     web3 = new Web3(window.ethereum);
-    factory = await new web3.eth.Contract(factoryABI,"0x7E7D196F3Af524d9A2F22Af3A993c9eaf41C30F8");
+    factory = await new web3.eth.Contract(factoryABI,"0x7A0f8DBe8bee960572A05a363e75E5907B0ceAAe");
     USDAddress = await factory.methods.usd().call();
     console.log(USDAddress);
     dollar= await new web3.eth.Contract(bep20ABI,USDAddress);
@@ -538,7 +538,7 @@ export const createPool=async (thresh)=>{
     if(!ref){
         ref=factory._address;
         console.log(ref);
-    }    var tokenFactory_=new web3.eth.Contract(tokenFactoryABI,"0x4523c1C67409F7B56D448F072F326898a3230963");
+    }    var tokenFactory_=new web3.eth.Contract(tokenFactoryABI,"0x0B7FD1da6Aec298dD17B6319F7e10749143B9cBa");
     console.log(BurnTax,LPTax,wallets,addition);
         if(!LPTax.current){
             LPTax="0";
