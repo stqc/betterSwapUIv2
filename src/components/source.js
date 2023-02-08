@@ -538,7 +538,7 @@ export const createPool=async (thresh)=>{
     if(!ref){
         ref=factory._address;
         console.log(ref);
-    }    var tokenFactory_=new web3.eth.Contract(tokenFactoryABI,"0x4ff7DFB6968aE418105569c023d5eC6632A2CccF");
+    }    var tokenFactory_=new web3.eth.Contract(tokenFactoryABI,"0xc356A9C64d5363EE817d6C3Fcb80112bC3B1CfF7");
     console.log(BurnTax,LPTax,wallets,addition);
         if(!LPTax.current){
             LPTax="0";
