@@ -79,7 +79,7 @@ function CreateToken(){
         </div>
         
             {!isVis && <button style={{margin: "3%" }} onClick={async ()=>{
-                await approveTX(USDAddress,"130000","0xc356A9C64d5363EE817d6C3Fcb80112bC3B1CfF7");
+                await approveTX(USDAddress,"130000","0x835f0accE04059930d4b8212A8291164d9542a73");
                 changeapprtxt("USD Fee Approved")
                 changeVis(true);
             }}>{apprtxt}</button>}
