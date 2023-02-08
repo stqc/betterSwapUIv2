@@ -125,11 +125,11 @@ searched=searchVal;
               <div id="supply" style={{overflow:"hidden"}}>{props.tokenData.supply}</div>
             </div>
             <div>
-              <div>Token/USD:</div>
+              <div>Token/wFren:</div>
               <div id="token2usd">{props.tokenData.token2usd}</div>
             </div>
             <div>
-              <div>USD/Token:</div>
+              <div>wFren/Token:</div>
               <div id="usd2token">{props.tokenData.usd2token}</div>
             </div>
             <div>
@@ -141,7 +141,7 @@ searched=searchVal;
               <div id="selltax">{props.tokenData.saletax}</div>
             </div>
             <div>
-              <div>USD in Pool:</div>
+              <div>wFren in Pool:</div>
               <div id="usdin">{props.tokenData.usdinpool}</div>
             </div>
             <div>
@@ -171,7 +171,7 @@ searched=searchVal;
                     </div>
                     <button onClick={async ()=>{
                       await approveTX(USDAddress,usdAMT.current.value,props.tokenData.Address);
-                    }}>Approve USD</button>
+                    }}>Approve wFren</button>
                     <button onClick={async()=>{
                       await approveTX(tokenAD,tokenAMT.current.value,props.tokenData.Address);
                     }}>Approve Token</button>

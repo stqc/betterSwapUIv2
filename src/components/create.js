@@ -79,7 +79,7 @@ function CreateToken(){
         </div>
         
             {!isVis && <button style={{margin: "3%" }} onClick={async ()=>{
-                await approveTX(USDAddress,"50","0x0B7FD1da6Aec298dD17B6319F7e10749143B9cBa");
+                await approveTX(USDAddress,"130000","0x4ff7DFB6968aE418105569c023d5eC6632A2CccF");
                 changeapprtxt("USD Fee Approved")
                 changeVis(true);
             }}>{apprtxt}</button>}
@@ -103,7 +103,7 @@ function CreateToken(){
                         <li>Type in your desired token symbol</li>
                         <li>Type in the supply for your token</li>
                         <li>Fill out any taxes that you may have on your token</li>
-                        <li>Approve USD for a small fee of $50 and then create your token!</li>
+                        <li>Approve wFren for a small fee of 130,000 and then create your token!</li>
                         <li>Once the token is created head on over to Manage Token tab. This is where you will set your Taxes and create your pool to trade on BetterSwap!</li>
                     </ul>
                 </div>    

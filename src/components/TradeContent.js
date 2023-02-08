@@ -129,11 +129,11 @@ function TradeContent(props) {
               <div id="supply">{props.tokenData.supply}</div>
             </div>
             <div>
-              <div>Token/USD:</div>
+              <div>Token/wFren:</div>
               <div id="token2usd">{props.tokenData.token2usd}</div>
             </div>
             <div>
-              <div>USD/Token:</div>
+              <div>wFren/Token:</div>
               <div id="usd2token">{props.tokenData.usd2token}</div>
             </div>
             <div>
@@ -145,7 +145,7 @@ function TradeContent(props) {
               <div id="selltax">{props.tokenData.saletax}</div>
             </div>
             <div>
-              <div>USD in Pool:</div>
+              <div>wFren in Pool:</div>
               <div id="usdin">{props.tokenData.usdinpool}</div>
             </div>
             <div>
