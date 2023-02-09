@@ -56,8 +56,8 @@ function TradeContent(props) {
     var currentVal= Number(amount.current.value);
     currentVal=currentVal-((currentVal/100)*Number(props.tokenData.saletax))
     var tokensBeforePriceImpact = currentVal*Number(props.tokenData.usd2token);
-    inPoolUSD-=currentVal;
-    inPoolToken=inPoolToken+tokensBeforePriceImpact;
+    inPoolToken+=currentVal;
+    inPoolUSD=inPoolUSD-tokensBeforePriceImpact;
     var newPrice = inPoolUSD/inPoolToken;
     updateEst((newPrice*currentVal));
   }
