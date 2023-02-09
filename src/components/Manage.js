@@ -48,12 +48,10 @@ searched=searchVal;
       <div className="chart-content" style={{ padding: '2%' }}>
         {props.tokenData.trading?<>
         <span style={{ fontSize: '20px', padding: '2%' }}>
-          In order to create a pool for your token to be traded on BetterSwap, please enter the Threshold to obtain the DAO token and press Create Pool
-       
-      
-          <br/> <h5>For creating a new pool please search for your token by pasting the token address in the search bar from the menu<br/>Once the pool is created you may add the liquidity as required</h5>
-            <h5>Once the pool is created, please click on the Set Pool Address button to enable seamless trading for the pool</h5>
-            <h5>NOTE: Once the above steps are completed for your token the mentioned buttons from above wil NOT appear</h5>
+          In order to create a pool for your token to be traded on BetterSwap, please search for it in the search bar followed by entering the Threshold to obtain the DAO token and press Create Pool
+          <br/><br/><span style={{fontSize:"15px", color:"green"}}>The Liquidity removal on BetterSwap is controlled by the vote of investors in your project. Investors who have a DAO token (which is obtained when someone purchase a minimum number of tokens set by project developers as DAO Threshold) are allowed to vote.
+          <br></br><br></br>The DAO Threshold cannot exceed 10% of the supply</span>
+          <br/> <h5><br/>Once the pool is created you may add the liquidity as required, and then proceed to click on Enable Trading in order for your token to be traded.</h5>
         </span>
         {props.tokenData.Address!=="0x0000000000000000000000000000000000000000" || props.tokenData.Address!==null &&
         <>
@@ -72,7 +70,7 @@ searched=searchVal;
         </>
         }<button style={{ margin: '3%' }} onClick={()=>{
           setPoolAddress();
-        }}>Set Pool Address</button></>:
+        }}>{props.tokenData.lpset?"Trading Enabled":"Enable Trading"}</button></>:
         <><span style={{ fontSize: '20px', padding: '2%' }}>
         Trading has been disabled for liquidity removal vote,
         <br />

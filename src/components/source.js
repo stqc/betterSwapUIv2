@@ -121,8 +121,8 @@ export const getPool=async(tokenAddress)=>
                 tokenSearched=bep20;
                 await updateBalances();
                 poolInfo.Address=poolAddress;
-                poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18).toLocaleString();
-                poolInfo.usd2token= (await pool.methods.USDPerToken().call()/1e18).toLocaleString();                
+                poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18);
+                poolInfo.usd2token= (await pool.methods.USDPerToken().call()/1e18);                
                 poolInfo.buytax= await pool.methods.totalBuyTax().call();
                 poolInfo.saletax= await pool.methods.totalSaleTax().call();
                 poolInfo.name= await tokenSearched.methods.name().call();
@@ -134,10 +134,10 @@ export const getPool=async(tokenAddress)=>
                 poolInfo.yesvote=await pool.methods.yesVotes().call();
                 poolInfo.novote=await pool.methods.noVotes().call();
                 poolInfo.thresh= (await pool.methods.DAOThreshold().call()/1e18).toLocaleString();
-                
+                poolInfo.lpset= !(await tokenSearched.methods.poolAd().call())=="0x0000000000000000000000000000000000000000";
                 await updatetokendata(poolInfo);
                 await buildChart()
-                 
+                console.log(poolInfo);
                 visibleMakerL("none");
                 await upChart();
             }
@@ -151,7 +151,7 @@ export const getPool=async(tokenAddress)=>
                 poolInfo.name= await tokenSearched.methods.name().call();
                 poolInfo.supply= (await tokenSearched.methods.totalSupply().call()/1e18).toLocaleString();
                 poolInfo.ben= await pool.methods.beneficiery().call();
-                poolInfo.usdinpool=(await dollar.methods.balanceOf(poolAddress).call()/1e18).toLocaleString();
+                poolInfo.usdinpool=(await dollar.methods.balanceOf(poolAddress).call()/1e18);
                 poolInfo.tokeninpool=(await tokenSearched.methods.balanceOf(poolAddress).call()/1e18).toLocaleString();
                 poolInfo.trading= await pool.methods.tradingEnabled().call();
                 poolInfo.yesvote=await pool.methods.yesVotes().call();
@@ -161,6 +161,7 @@ export const getPool=async(tokenAddress)=>
                     poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18).toLocaleString();
                     poolInfo.usd2token= (await pool.methods.USDPerToken().call()/1e18).toLocaleString();                
                 }
+                poolInfo.lpset= (await tokenSearched.methods.poolAd().call())!="0x0000000000000000000000000000000000000000";
                 await updatetokendata(poolInfo);
                 await buildChart()
                  
@@ -207,8 +208,8 @@ export const getPool=async(tokenAddress)=>
         pool=await new web3.eth.Contract(poolABI,poolAD);
         if(poolAD!="0x0000000000000000000000000000000000000000"){
         try{
-            poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18).toLocaleString();
-                poolInfo.usd2token= (await pool.methods.USDPerToken().call()/1e18).toLocaleString();                
+            poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18);
+                poolInfo.usd2token= (await pool.methods.USDPerToken().call()/1e18);                
                 poolInfo.buytax= await pool.methods.totalBuyTax().call();
                 poolInfo.saletax= await pool.methods.totalSaleTax().call();
                 poolInfo.name= await tokenSearched.methods.name().call();
@@ -220,7 +221,7 @@ export const getPool=async(tokenAddress)=>
                 poolInfo.yesvote=await pool.methods.yesVotes().call();
                 poolInfo.novote=await pool.methods.noVotes().call();
                 poolInfo.thresh= (await pool.methods.DAOThreshold().call()/1e18).toLocaleString();
-            
+                
             await updatetokendata(poolInfo);
              
              
@@ -242,8 +243,8 @@ export const getPool=async(tokenAddress)=>
                 poolInfo.buytax= await pool.methods.totalBuyTax().call();
                 poolInfo.saletax= await pool.methods.totalSaleTax().call();
                 
-                try{poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18).toLocaleString()
-                    poolInfo.usd2token=(await pool.methods.USDPerToken().call()/1e18).toLocaleString() }
+                try{poolInfo.token2usd= (await pool.methods.tokenPerUSD().call()/1e18)
+                    poolInfo.usd2token=(await pool.methods.USDPerToken().call()/1e18) }
                 catch(e){
                     poolInfo.token2usd= 0;
                     poolInfo.usd2token= 0;

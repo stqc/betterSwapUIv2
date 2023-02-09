@@ -40,26 +40,26 @@ function TradeContent(props) {
   },[])
 
   const calculateToken = ()=>{
-    var inPoolUSD = Number(props.tokenData.usdinpool.replace(",",""))
-    var inPoolToken = Number(props.tokenData.tokeninpool.replace(",",""))
+    var inPoolUSD = Number(props.tokenData.usdinpool.replace(/\,/g,""))
+    var inPoolToken = Number(props.tokenData.tokeninpool.replace(/\,/g,""))
     var currentVal= Number(amount.current.value);
     currentVal=currentVal-((currentVal/100)*Number(props.tokenData.buytax))
     var tokensBeforePriceImpact = currentVal*Number(props.tokenData.token2usd);
     inPoolUSD+=currentVal;
     inPoolToken=inPoolToken-tokensBeforePriceImpact;
     var newPrice = inPoolToken/inPoolUSD
-    updateEst((newPrice*currentVal).toLocaleString());
+    updateEst((newPrice*currentVal));
   }
   const calculateUSD = ()=>{
-    var inPoolUSD = Number(props.tokenData.usdinpool.replace(",",""))
-    var inPoolToken = Number(props.tokenData.tokeninpool.replace(",",""))
+    var inPoolUSD = Number(props.tokenData.usdinpool.replace(/\,/g,""))
+    var inPoolToken = Number(props.tokenData.tokeninpool.replace(/\,/g,""))
     var currentVal= Number(amount.current.value);
     currentVal=currentVal-((currentVal/100)*Number(props.tokenData.saletax))
     var tokensBeforePriceImpact = currentVal*Number(props.tokenData.usd2token);
     inPoolUSD-=currentVal;
     inPoolToken=inPoolToken+tokensBeforePriceImpact;
     var newPrice = inPoolUSD/inPoolToken;
-    updateEst((newPrice*currentVal).toLocaleString());
+    updateEst((newPrice*currentVal));
   }
 
   return (

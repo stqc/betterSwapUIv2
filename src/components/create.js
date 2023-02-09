@@ -107,6 +107,7 @@ function CreateToken(){
                         <li>Once the token is created head on over to Manage Token tab. This is where you will set your Taxes and create your pool to trade on BetterSwap!</li>
                     </ul>
                 </div>    
+                <p style={{display:show, color:"white"}}>Your Token Address is:{tkad}</p>
                 <button style={{display:show}} onClick={()=>{
                   window.location.href="/manage?token="+tkad+"&ref="+ref;
                 }}>Go to Manage Token</button>            
