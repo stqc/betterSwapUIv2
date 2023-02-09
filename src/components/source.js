@@ -137,7 +137,6 @@ export const getPool=async(tokenAddress)=>
                 poolInfo.lpset= !(await tokenSearched.methods.poolAd().call())=="0x0000000000000000000000000000000000000000";
                 await updatetokendata(poolInfo);
                 await buildChart()
-                console.log(poolInfo);
                 visibleMakerL("none");
                 await upChart();
             }
